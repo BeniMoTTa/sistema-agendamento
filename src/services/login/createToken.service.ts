@@ -4,13 +4,12 @@ import { prisma } from "../../server";
 import { AppError } from "../../errors/errors";
 import jwt from "jsonwebtoken";
 import "dotenv/config";
-import { Users } from "@prisma/client";
 
 export const createTokenService = async ({
   email,
   password,
 }: TLoginRequest): Promise<{}> => {
-  const user: Users | null = await prisma.users.findFirst({
+  const user = await prisma.users.findFirst({
     where: {
       email,
     },
@@ -27,7 +26,7 @@ export const createTokenService = async ({
   }
 
   const token: string = jwt.sign(
-    { isSeller: user.is_seller },
+    { cpfUser: user.cpf },
     process.env.SECRET_KEY!,
     {
       expiresIn: process.env.EXPIRES_IN,

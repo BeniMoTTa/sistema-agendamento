@@ -21,11 +21,13 @@ model Comments {
 }
 
 model Users {
-    id       Int        @id @default(autoincrement())
-    name     String     @db.VarChar(127)
-    password String     @db.VarChar(60)
-    email    String     @unique @db.VarChar(127)
-    Comments Comments[]
+    id         Int        @id @default(autoincrement())
+    name       String     @db.VarChar(127)
+    password   String     @db.VarChar(60)
+    email      String     @unique @db.VarChar(127)
+    cpf        String     @db.VarChar(11)
+    user_color String     @db.VarChar(7)
+    Comments   Comments[]
 
     @@map("users")
 }
