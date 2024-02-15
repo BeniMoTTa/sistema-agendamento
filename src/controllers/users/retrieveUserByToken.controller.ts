@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { TUserResponse } from "../../interfaces/user.interfaces";
-import { retrieveUserService } from "../../services/user/retrieve.service";
+import { retrieveUserService } from "../../services/users/retrieve.service";
 
 export const retrieveUserByIdController = async (
   req: Request,

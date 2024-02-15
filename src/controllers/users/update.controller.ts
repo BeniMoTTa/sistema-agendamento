@@ -3,7 +3,7 @@ import {
   TUserResponse,
   TUserUpdateRequest,
 } from "../../interfaces/user.interfaces";
-import { updateUserService } from "../../services/user/update.service";
+import { updateUserService } from "../../services/users/update.service";
 
 export const updateUserController = async (
   req: Request,
